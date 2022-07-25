@@ -1,0 +1,42 @@
+<!-- this is a view demonstrating the capabilities of generic/object_detail.thml -->
+{% extends 'generic/object_detail.html' %}
+{% load helpers %}
+
+{% block content_left_page %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>Query</strong>
+            </div>
+            <table class="table table-hover panel-body attr-table">
+                <tr>
+                    <td>Name</td>
+                    <td><span>{{ object.name }}</span></td>
+                </tr>
+                <tr>
+                    <td>Slug</td>
+                    <td><span>{{ object.slug }}</span></td>
+                </tr>
+                <tr>
+                    <td>Query</td>
+                    <td><pre id="query">{{ object.context.query }}</pre></td>
+                </tr>
+                <tr>
+                    <td>Query Variables</td>
+                    <td><pre>{{ object.context.variables|render_json }}</pre></td>
+                </tr>
+            </table>
+        </div>
+{% endblock content_left_page %}
+
+{% block content_right_page %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Compiled Template</strong>
+    </div>
+    <table class="table table-hover panel-body attr-table">
+        <tr>
+            <td><pre id="query">{{ object.context.query }}</pre></td>
+        </tr>
+    </table>
+</div>
+{% endblock content_right_page %}
