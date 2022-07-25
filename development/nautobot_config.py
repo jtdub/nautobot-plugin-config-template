@@ -6,7 +6,6 @@ import sys
 from nautobot.core.settings import *  # noqa: F403
 from nautobot.core.settings_funcs import parse_redis_connection
 
-
 #
 # Misc. settings
 #
@@ -145,6 +144,6 @@ PLUGINS = ["config_template"]
 
 PLUGINS_CONFIG = {
     "config_template": {
-        "token": os.getenv.get("NAUTOBOT_CT_API_TOKEN"),
+        "token": os.getenv("NAUTOBOT_CT_API_TOKEN"),
     }
 }

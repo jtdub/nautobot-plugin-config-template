@@ -3,29 +3,33 @@
 {% load helpers %}
 
 {% block content_left_page %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <strong>Query</strong>
-            </div>
-            <table class="table table-hover panel-body attr-table">
-                <tr>
-                    <td>Name</td>
-                    <td><span>{{ object.name }}</span></td>
-                </tr>
-                <tr>
-                    <td>Slug</td>
-                    <td><span>{{ object.slug }}</span></td>
-                </tr>
-                <tr>
-                    <td>Query</td>
-                    <td><pre id="query">{{ object.context.query }}</pre></td>
-                </tr>
-                <tr>
-                    <td>Query Variables</td>
-                    <td><pre>{{ object.context.variables|render_json }}</pre></td>
-                </tr>
-            </table>
-        </div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Query</strong>
+    </div>
+    <table class="table table-hover panel-body attr-table">
+        <tr>
+            <td>Name</td>
+            <td><span>{{ object.name }}</span></td>
+        </tr>
+        <tr>
+            <td>Slug</td>
+            <td><span>{{ object.slug }}</span></td>
+        </tr>
+        <tr>
+            <td>Query</td>
+            <td><pre id="query">{{ object.context.query }}</pre></td>
+        </tr>
+        <tr>
+            <td>Query Variables</td>
+            <td><pre>{{ object.context.variables|render_json }}</pre></td>
+        </tr>
+        <tr>
+            <td>Jinja Template</td>
+            <td><pre id="template">{{ object.template }}</pre></td>
+        </tr>
+    </table>
+</div>
 {% endblock content_left_page %}
 
 {% block content_right_page %}
@@ -35,7 +39,7 @@
     </div>
     <table class="table table-hover panel-body attr-table">
         <tr>
-            <td><pre id="query">{{ object.context.query }}</pre></td>
+            <td><pre id="query">{{ compiled_template }}</pre></td>
         </tr>
     </table>
 </div>

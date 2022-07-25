@@ -1,5 +1,6 @@
-from django import forms
+"""Config Template forms."""
 
+from django import forms
 from nautobot.utilities.forms import BootstrapMixin
 
 from config_template import models
@@ -17,5 +18,7 @@ class ConfigTemplateForm(BootstrapMixin, forms.ModelForm):
     """Create/update form for 'ConfigTemplateModel' objects."""
 
     class Meta:
+        """Meta definitions."""
+
         model = models.ConfigTemplateModel
         fields = ["name", "context", "template"]

@@ -1,3 +1,6 @@
+"""Config Template filters."""
+
+
 from nautobot.utilities.filters import BaseFilterSet, SearchFilter
 
 from config_template import models
@@ -11,6 +14,8 @@ class ConfigTemplateModelFilterSet(BaseFilterSet):
     )
 
     class Meta:
+        """Meta definitions."""
+
         model = models.ConfigTemplateModel
         fields = [
             "name",

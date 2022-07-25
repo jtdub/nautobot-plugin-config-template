@@ -1,10 +1,7 @@
-import django_tables2 as tables
+"""Config Template tables."""
 
-from nautobot.utilities.tables import (
-    BaseTable,
-    ButtonsColumn,
-    ToggleColumn,
-)
+import django_tables2 as tables
+from nautobot.utilities.tables import BaseTable, ButtonsColumn, ToggleColumn
 
 from config_template import models
 
@@ -16,6 +13,8 @@ class ConfigTemplateModelTable(BaseTable):
     name = tables.LinkColumn()
     actions = ButtonsColumn(models.ConfigTemplateModel)
 
-    class Meta:
+    class Meta:  # pylint: disable=too-few-public-methods
+        """Meta definitions."""
+
         model = models.ConfigTemplateModel
         fields = ["pk", "name", "context"]

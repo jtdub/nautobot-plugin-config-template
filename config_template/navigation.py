@@ -1,3 +1,5 @@
+"""Config Template navigation definition."""
+
 from nautobot.extras.plugins import PluginMenuButton, PluginMenuItem
 from nautobot.utilities.choices import ButtonColorChoices
 
