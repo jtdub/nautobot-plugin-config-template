@@ -18,13 +18,15 @@ class ConfigTemplateConfig(PluginConfig):
     verbose_name = "Config Template"
     version = __version__
     author = "James Williams"
-    description = "Config Template."
+    description = "Config Template"
     base_url = "config-template"
-    required_settings = []
+    required_settings = ["token"]
     min_version = "1.2.0"
     max_version = "1.9999"
     default_settings = {}
     caching_config = {}
+    home_view_name = "plugins:config_template:configtemplatemodel_list"
+    docs_view_name = "plugins:config_template:docs"
 
 
 config = ConfigTemplateConfig  # pylint:disable=invalid-name
